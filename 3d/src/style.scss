@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+
+$depth: 100px;
+$transition: 1s;
+
+body {
+	font: 100%/1 Roboto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background: #333;
+}
+
+.phone {
+	display: inline-block;
+	transform: perspective(500px) rotateX(0) rotate(0) translateZ(0);
+	perspective: 800px;
+	transform-style: preserve-3d;
+	outline: 50vmin solid #333;
+	transition: transform $transition;
+
+	body:hover & {
+		transform: perspective(500px) rotateX(60deg) rotate(45deg) translateZ(15vmin);
+	}
+}
+
+.top-bar,
+.bottom-bar {
+	background: #111;
+	height: 6vmin;
+	margin: -1px 0;
+}
+
+.top-bar {
+	border-radius: 4vmin 4vmin 0 0;
+}
+.bottom-bar {
+	border-radius: 0 0 4vmin 4vmin;
+}
+
+.screen {
+	width: 40vmin;
+	height: 60vmin;
+	transform-style: preserve-3d;
+	border: solid #111;
+	border-width: 4vmin;
+}
+
+.side {
+	position: absolute;
+	transform-style: preserve-3d;
+	background-image: url(https://images.unsplash.com/photo-1515630278258-407f66498911?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1548&q=80);
+	background-color: #aaa;
+	background-blend-mode: multiply;
+	background-size: cover;
+}
+
+.top {
+	top: 0;
+	left: 0;
+	right: 0;
+	height: $depth;
+	transform-origin: center top;
+	transform: rotateX(-90deg);
+	background-position: bottom right;
+}
+
+.bottom {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: $depth;
+	transform-origin: center bottom;
+	transform: rotateX(90deg);
+	background-position: center bottom;
+}
+
+.left {
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: $depth;
+	transform-origin: left center;
+	transform: rotateY(90deg);
+	background-position: left top;
+}
+
+.right {
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: $depth;
+	transform-origin: right center;
+	transform: rotateY(-90deg);
+	background-position: bottom right;
+}
+
+.floor,
+.ceiling {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.floor {
+	background-position: center center;
+	transform: translateZ(-$depth);
+}
+
+.ceiling {
+	background: linear-gradient(
+		to bottom right,
+		rgba(white, 0) 0%,
+		rgba(white, 0) 40%,
+		rgba(white, 0.05) 0,
+		rgba(white, 0)
+	);
+}
+
+h1 {
+	font-size: 10vmin;
+	text-align: center;
+	color: white;
+	font-weight: 100;
+	margin: 10vmin 0;
+	text-shadow: 0 0 0.5em white;
+}
