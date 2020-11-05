@@ -1,0 +1,36 @@
+body {
+  background: #007AFF;  
+}
+
+.phone {
+  position: relative;
+    margin: 0 auto;
+      height: 450px;
+    border-radius: 35px;
+    box-shadow: inset 6px -6px 15px rgba(145,160,180,.45), -10px 30px 40px rgba(118,146,180,.18);
+    width: 220px;
+    top: auto;
+    left: -30px;
+    z-index: auto;
+    background: linear-gradient(to bottom left,#f3f8fb,#e5ebf2);
+    opacity: 1;
+    transition: none;
+    pointer-events: auto;
+  transition: transform 0.1s ease-out;
+  transform: matrix3d(.830503,-.0167194,0,.000110922,.0515284,.835769,0,.0000440454,0,0,1,0,59,90,0,1);
+}
+
+.screen {
+  position: absolute;
+  left: 0;
+     width: 320px;
+    height: 567px;
+    border-radius: 9px;
+    transform: matrix3d(.5973395145971294,.01568918980316438,0,.00006432768215272425,.02390394939549776,.5315124761457759,0,-.00003167869727711868,0,0,1,0,649,51,0,1);
+    box-shadow: -1px 1px 4px rgba(107,124,147,.5);
+    background: red;
+    transition: opacity 1s ease;
+      transform-origin: 0 0;
+    overflow: hidden;
+    will-change: transform;
+}
